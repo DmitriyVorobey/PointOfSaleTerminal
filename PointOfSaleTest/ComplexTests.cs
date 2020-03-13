@@ -35,16 +35,20 @@ namespace PointOfSaleTest
         [TestMethod]
         public void TestCase1()
         {
+            // arrange
             _posTerminal.Scan("ABCDABA");
 
+            // act, assert
             Assert.AreEqual(13.25, _posTerminal.CalculateTotal());
         }
 
         [TestMethod]
         public void TestCase2()
         {
+            // arrange
             _posTerminal.Scan("CCCCCCC");
 
+            // act, assert
             Assert.AreEqual(6.00, _posTerminal.CalculateTotal());
         }
 
@@ -53,6 +57,7 @@ namespace PointOfSaleTest
         {
             _posTerminal.Scan("ABCD");
 
+            // act, assert
             Assert.AreEqual(7.25, _posTerminal.CalculateTotal());
         }
     }
