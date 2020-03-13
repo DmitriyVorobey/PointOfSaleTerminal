@@ -59,21 +59,21 @@ namespace PointOfSaleTest
         }
 
         [TestMethod]
-        [ExpectedException(typeof(UnnableToAddCalculatorException))]
-        public void SetCalculator_SingleUnitCalculatorAddTwice_Exception()
+        [ExpectedException(typeof(UnnableToAddHandlerException))]
+        public void SetCalculator_SingleUnitHandlerAddTwice_Exception()
         {
             // arrange
             var posTerminal = new PointOfSaleTerminal();
 
             // act
             // assert
-            posTerminal.SetCalculator(new SingleUnitCalculator());
-            posTerminal.SetCalculator(new SingleUnitCalculator());
+            posTerminal.SetHandler(new SingleUnitHandler());
+            posTerminal.SetHandler(new SingleUnitHandler());
         }
 
         [TestMethod]
-        [ExpectedException(typeof(UnnableToAddCalculatorException))]
-        public void SetCalculator_VolumeCalculatorAddTwiceForOneProduct_Exception()
+        [ExpectedException(typeof(UnnableToAddHandlerException))]
+        public void SetCalculator_VolumeHandlerAddTwiceForOneProduct_Exception()
         {
             // arrange
             var posTerminal = new PointOfSaleTerminal();
@@ -81,8 +81,8 @@ namespace PointOfSaleTest
 
             // act
             // assert
-            posTerminal.SetCalculator(new VolumeCalculator(5, 2, product));
-            posTerminal.SetCalculator(new VolumeCalculator(6, 3, product));
+            posTerminal.SetHandler(new VolumeHandler(5, 2, product));
+            posTerminal.SetHandler(new VolumeHandler(6, 3, product));
         }
     }
 }

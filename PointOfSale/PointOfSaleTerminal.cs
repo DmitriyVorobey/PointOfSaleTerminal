@@ -9,7 +9,7 @@ namespace PointOfSale
     public class PointOfSaleTerminal
     {
         private List<Product> _products = new List<Product>();
-        private List<ICalculator> _calculators = new List<ICalculator>();
+        private List<IHandler> _handlers = new List<IHandler>();
 
         private string _line = string.Empty;
 
@@ -23,10 +23,10 @@ namespace PointOfSale
             _products.Add(product);
         }
 
-        public void SetCalculator(ICalculator calculator)
+        public void SetHandler(IHandler handler)
         {
-            calculator.Validate(_calculators);
-            _calculators.Add(calculator);
+            handler.Validate(_handlers);
+            _handlers.Add(handler);
         }
 
         public void Scan(string productCodes)
@@ -48,7 +48,7 @@ namespace PointOfSale
                 }).ToList();
 
             var calculationRequest = new CalculationRequest(orders);
-            _calculators.ForEach(x => x.Calculate(calculationRequest));
+            _handlers.ForEach(x => x.Handle(calculationRequest));
 
             return calculationRequest.TotalPrice;
         }

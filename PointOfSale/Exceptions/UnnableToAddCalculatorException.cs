@@ -2,7 +2,7 @@
 
 namespace PointOfSale.Exceptions
 {
-    public class UnnableToAddCalculatorException : Exception
+    public class UnnableToAddHandlerException : Exception
     {
     }
 }

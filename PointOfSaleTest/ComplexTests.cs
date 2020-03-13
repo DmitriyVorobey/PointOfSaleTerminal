@@ -17,19 +17,19 @@ namespace PointOfSaleTest
 
             var productA = new Product('A', 1.25);
             _posTerminal.SetPricing(productA);
-            _posTerminal.SetCalculator(new VolumeCalculator(3, 3.00 ,productA));
+            _posTerminal.SetHandler(new VolumeHandler(3, 3.00 ,productA));
 
             var productB = new Product('B', 4.25);
             _posTerminal.SetPricing(productB);
 
             var productC = new Product('C', 1.00);
             _posTerminal.SetPricing(productC);
-            _posTerminal.SetCalculator(new VolumeCalculator(6, 5.00, productC));
+            _posTerminal.SetHandler(new VolumeHandler(6, 5.00, productC));
 
             var productD = new Product('D', 0.75);
             _posTerminal.SetPricing(productD);
 
-            _posTerminal.SetCalculator(new SingleUnitCalculator());
+            _posTerminal.SetHandler(new SingleUnitHandler());
         }
 
         [TestMethod]

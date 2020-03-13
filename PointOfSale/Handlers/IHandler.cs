@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace PointOfSale.Calculators
 {
-    public interface ICalculator
+    public interface IHandler
     {
-        void Calculate(CalculationRequest request);
+        void Handle(CalculationRequest request);
 
         // Can calculator be used with existing calculators?
-        void Validate(List<ICalculator> calculators);
+        void Validate(List<IHandler> calculators);
     }
 }

@@ -6,18 +6,18 @@ using System.Linq;
 
 namespace PointOfSale.Calculators
 {
-    public class SingleUnitCalculator : ICalculator
+    public class SingleUnitHandler : IHandler
     {
-        public void Calculate(CalculationRequest request)
+        public void Handle(CalculationRequest request)
         {
             request.TotalPrice += request.NotCalculatedOrders.Select(x => x.Product.Price * x.Count).Sum();
         }
 
-        public void Validate(List<ICalculator> calculators)
+        public void Validate(List<IHandler> calculators)
         {
-            if (calculators.Any(x => x is SingleUnitCalculator))
+            if (calculators.Any(x => x is SingleUnitHandler))
             {
-                throw new UnnableToAddCalculatorException();
+                throw new UnnableToAddHandlerException();
             }
         }
     }
