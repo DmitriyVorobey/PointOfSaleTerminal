@@ -13,9 +13,9 @@ namespace PointOfSale.Calculators
             request.TotalPrice += request.NotCalculatedOrders.Select(x => x.Product.Price * x.Count).Sum();
         }
 
-        public void Validate(List<IHandler> calculators)
+        public void Validate(List<IHandler> handlers)
         {
-            if (calculators.Any(x => x is SingleUnitHandler))
+            if (handlers.Any(x => x is SingleUnitHandler))
             {
                 throw new UnnableToAddHandlerException();
             }
