@@ -21,11 +21,8 @@ namespace PointOfSale.Calculators
         public void Handle(CalculationRequest request)
         {
             var productsOrder = request.NotCalculatedOrders.FirstOrDefault(x => x.Product == Product);
-            if (productsOrder == null)
-            {
-                return;
-            }
-            else if(productsOrder.Count >= _quantity)
+
+            if(productsOrder?.Count >= _quantity)
             {
                 productsOrder.Count = productsOrder.Count - _quantity;
                 request.TotalPrice +=  _price;
