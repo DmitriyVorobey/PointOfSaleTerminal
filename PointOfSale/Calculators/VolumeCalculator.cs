@@ -25,11 +25,10 @@ namespace PointOfSale.Calculators
             {
                 return;
             }
-            else
+            else if(productsOrder.Count >= _volume)
             {
-                int volumeOffers = productsOrder.Count / _volume;
-                productsOrder.Count = productsOrder.Count % _volume;
-                request.TotalPrice += volumeOffers * _price;
+                productsOrder.Count = productsOrder.Count - _volume;
+                request.TotalPrice +=  _price;
             }
         }
 
