@@ -55,6 +55,7 @@ namespace PointOfSaleTests
         [TestMethod]
         public void TestCase3()
         {
+            // arrange
             _posTerminal.Scan("ABCD");
 
             // act, assert
