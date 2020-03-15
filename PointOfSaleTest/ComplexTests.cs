@@ -3,7 +3,7 @@ using PointOfSale;
 using PointOfSale.Calculators;
 using PointOfSale.Models;
 
-namespace PointOfSaleTest
+namespace PointOfSaleTests
 {
     [TestClass]
     public class ComplexTests

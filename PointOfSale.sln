@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointOfSaleTest", "PointOfSaleTest\PointOfSaleTest.csproj", "{38B13A1F-A2DC-43CA-9622-80AD00B2AD3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointOfSaleTests", "PointOfSaleTest\PointOfSaleTests.csproj", "{38B13A1F-A2DC-43CA-9622-80AD00B2AD3E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointOfSale", "PointOfSale\PointOfSale.csproj", "{E35247D6-6469-4E67-A5E4-7461BC56D9DE}"
 EndProject

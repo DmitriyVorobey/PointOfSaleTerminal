@@ -1,10 +1,9 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PointOfSale;
-using PointOfSale.Calculators;
 using PointOfSale.Exceptions;
 using PointOfSale.Models;
 
-namespace PointOfSaleTest
+namespace PointOfSaleTests
 {
     [TestClass]
     public class BasicTests
