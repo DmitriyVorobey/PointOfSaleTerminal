@@ -28,14 +28,5 @@ namespace PointOfSale.Calculators
                 request.TotalPrice +=  _price;
             }
         }
-
-        public void Validate(List<IHandler> calculators)
-        {
-            // There could only be a single volume discount per product.
-            if (calculators.Any(x => (x as VolumeHandler)?.Product == Product))
-            {
-                throw new UnnableToAddHandlerException();
-            }
-        }
     }
 }

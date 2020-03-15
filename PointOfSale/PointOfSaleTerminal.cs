@@ -25,7 +25,6 @@ namespace PointOfSale
 
         public void SetHandler(IHandler handler)
         {
-            handler.Validate(_handlers);
             _handlers.Add(handler);
         }
 

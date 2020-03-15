@@ -57,32 +57,5 @@ namespace PointOfSaleTest
             // assert
             posTerminal.Scan("A");
         }
-
-        [TestMethod]
-        [ExpectedException(typeof(UnnableToAddHandlerException))]
-        public void SetCalculator_SingleUnitHandlerAddTwice_Exception()
-        {
-            // arrange
-            var posTerminal = new PointOfSaleTerminal();
-
-            // act
-            // assert
-            posTerminal.SetHandler(new SingleUnitHandler());
-            posTerminal.SetHandler(new SingleUnitHandler());
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(UnnableToAddHandlerException))]
-        public void SetCalculator_VolumeHandlerAddTwiceForOneProduct_Exception()
-        {
-            // arrange
-            var posTerminal = new PointOfSaleTerminal();
-            var product = new Product('A', 1);
-
-            // act
-            // assert
-            posTerminal.SetHandler(new VolumeHandler(5, 2, product));
-            posTerminal.SetHandler(new VolumeHandler(6, 3, product));
-        }
     }
 }
